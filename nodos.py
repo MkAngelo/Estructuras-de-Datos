@@ -7,11 +7,15 @@ head = Node(1, None)
 probe = head
 
 while idx < 10:
-    print(probe.data)
     probe.next = Node(idx + 1, None)
     probe = probe.next
     idx += 1
 
+probe = head
+while probe.next != None:
+    val = probe.data
+    probe = probe.next
+    print(val)
 
 print('*'*20)
 # Circle
