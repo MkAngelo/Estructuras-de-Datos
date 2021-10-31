@@ -11,4 +11,4 @@ class Queue:
             while self.inboud_stack:
                 self.outbound_stack.append(self.inboud_stack.pop())
 
-        return self.outbound_stack.pop()
+        return self.outbound_stack.pop() 
