@@ -1,6 +1,3 @@
-from xmlrpc.client import boolean
-
-
 class Pila():
     lista = []
     tope = 0
@@ -9,24 +6,24 @@ class Pila():
     def __init__(self, size) -> None:
         self.size = size
     
-    def empty(self) -> boolean:
+    def esta_vacia(self):
         if self.tope == 0:
             return True
         else:
             return False
 
-    def push(self, dato) -> None:
+    def insertar(self, dato):
         if self.tope < self.size:
-            self.lista.append(dato)
+            self.lista += [dato]
             self.tope += 1
         else:
             print("La pila esta llena!")
 
-    def pop(self) -> int:
-        dato = self.lista[self.tope]
-        self.lista.pop()
+    def eliminar(self):
+        dato = self.lista[self.tope-1]
         self.tope -= 1
+        self.lista.pop()
         return dato
 
-    def last(self) -> int:
-        return self.lista[self.tope]
+    def cima(self):
+        print(self.lista[self.tope-1])
